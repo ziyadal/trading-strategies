@@ -1,0 +1,50 @@
+• In plain English, it does this:
+
+  The current code uses a research window from 2023-01-01 through 2026-08-25.
+
+  1. Before the open, it builds a stock list of US companies with:
+
+  - market cap above $5B
+  - price between $30 and $500
+  - positive trailing-12-month net income
+
+  2. At 9:45 a.m. ET, it checks which of those stocks have strong opening volume:
+
+  - RVOL = today’s first 15-minute volume
+  - divided by the median first 15-minute volume from the previous 20 sessions
+  - only stocks with RVOL >= 1.5 stay in play
+
+  3. At 9:46 a.m. ET, those RVOL names become the live intraday universe.
+  4. For each live stock, it builds 2-minute candles and tracks:
+
+  - a 9 EMA
+  - an ATR(14)
+
+  5. The setup is valid only if the 2-minute candles have held above the 9 EMA since the open.
+
+  - Wicks below the EMA are fine
+  - any 2-minute close below the EMA invalidates the setup for the day
+
+  6. If the first 15 minutes held, it waits for the first pullback after that where price:
+
+  - touches the 9 EMA, or
+  - comes within 0.5% of it
+
+  7. On that pullback, it enters long.
+  8. Position/risk rules:
+
+  - 10% of portfolio per trade
+  - keep 5% cash free at all times
+  - initial stop-loss = entry price - 1.5 x ATR(14)
+  - after entry, the stop trails higher as a chandelier stop:
+  - highest price since entry - 2.5 x live ATR(14)
+  - the stop only ratchets tighter; it never loosens intraday
+
+  9. Exit rules:
+
+  - initial ATR stop or trailing chandelier stop hit
+  - 2-minute close below the 9 EMA after entry
+  - no new entries after 11:30 a.m. ET
+  - all remaining positions are sold 1 minute before the closing bell
+
+  SPY is just used as the market-hours clock.

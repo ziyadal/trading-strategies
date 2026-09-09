@@ -1,0 +1,48 @@
+{
+  "corrected": {
+    "signals": 1278,
+    "trades": 1278,
+    "physical_orders": 2556,
+    "additional_buys_without_fresh_signals": 0,
+    "market_on_open_orders": 0,
+    "overnight_positions_carried": 0,
+    "early_close_violations": 0,
+    "gross_pnl": -1197.22,
+    "estimated_spread_cost": 984.45,
+    "explicit_fees": 2556.0,
+    "net_pnl": -3753.22,
+    "net_return_fraction": -0.1501,
+    "max_drawdown_fraction": null,
+    "gross_profit_factor": 0.893,
+    "net_profit_factor": 0.701,
+    "gross_win_rate": null,
+    "turnover_fraction": 161.79,
+    "last_90_day_trades": 237,
+    "last_90_day_net_pnl": -581.14,
+    "last_90_day_profit_factor": 0.735,
+    "net_win_rate": null
+  },
+  "cost_stress_tests": {
+    "baseline_1usd_fee_2bps_slippage": {
+      "fee_per_order": 1.0,
+      "slippage_bps": 2.0,
+      "net_pnl": -3753.22
+    },
+    "schwab_0usd_fee_2bps_slippage": {
+      "fee_per_order": 0.0,
+      "slippage_bps": 2.0,
+      "net_pnl": -1197.22
+    },
+    "higher_slippage_5bps": {
+      "fee_per_order": 1.0,
+      "slippage_bps": 5.0,
+      "net_pnl": -7797.88
+    },
+    "two_times_fee": {
+      "fee_per_order": 2.0,
+      "slippage_bps": 2.0,
+      "net_pnl": -6309.22
+    }
+  },
+  "note": "Approximate simulation.  True rerun requires LEAN with the corrected algorithm."
+}

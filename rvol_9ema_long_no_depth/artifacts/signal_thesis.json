@@ -1,0 +1,40 @@
+{
+  "fresh_signals": 1278,
+  "gross_returns_bps": {
+    "count": 1278,
+    "mean_bps": -5.12,
+    "median_bps": 1.02,
+    "std_bps": 148.99,
+    "hit_rate": 0.5016
+  },
+  "net_returns_bps": {
+    "count": 1278,
+    "mean_bps": -18.05,
+    "median_bps": -12.45,
+    "std_bps": 148.94,
+    "hit_rate": 0.4468
+  },
+  "mean_gross_ci_95_bps": [
+    -13.46,
+    2.94
+  ],
+  "by_year": {
+    "2025": {
+      "count": 915,
+      "mean_bps": -8.95,
+      "hit_rate": 0.4907
+    },
+    "2026": {
+      "count": 363,
+      "mean_bps": 4.51,
+      "hit_rate": 0.5289
+    }
+  },
+  "concentration": {
+    "top_10_gross_pnl": 447.6,
+    "bottom_10_gross_pnl": -1379.82,
+    "total_gross_pnl": -1197.22,
+    "top_10_share_fraction": -0.374
+  },
+  "interpretation": "Mean gross return is near zero and the 95% CI includes zero, so the fresh signal does not show a reliable midpoint edge after costs."
+}
