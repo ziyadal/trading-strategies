@@ -1,5 +1,7 @@
 # Quantitative Trading Strategy Research
 
+[![Verify strategy lifecycle](https://github.com/ziyadal/trading-strategies/actions/workflows/verify.yml/badge.svg)](https://github.com/ziyadal/trading-strategies/actions/workflows/verify.yml)
+
 A research workspace for translating discretionary trading ideas into explicit QuantConnect algorithms—and then trying to disprove them with lifecycle audits, regression tests, realistic costs, and reproducible analysis.
 
 The most important result in this repository is not a profitable backtest. It is the demonstration that **engineering correctness and trading edge are separate questions**: a strategy can be repaired, fully tested, and still be unsuitable for paper or live trading.
