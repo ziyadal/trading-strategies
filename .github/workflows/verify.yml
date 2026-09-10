@@ -1,0 +1,33 @@
+name: Verify strategy lifecycle
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lifecycle:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rvol_9ema_long_no_depth
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile strategy modules
+        run: python -m py_compile long_rvol_9ema_framework_annotated.py lifecycle.py
+
+      - name: Run lifecycle regression tests
+        run: python -m unittest tests.test_lifecycle -v
